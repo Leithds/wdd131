@@ -1,0 +1,51 @@
+body {
+    font-size: 20px;
+    text-align: center;
+}
+
+.content {
+    line-height: 1.5;
+    margin: 20px;
+    text-align: left;
+    border: 1px solid black;
+    padding: 100px;
+    align-content: center;
+    max-width: 600px;
+}
+
+header h1 {
+    letter-spacing: 1.2px;
+    text-align: center;
+    color: black;
+    padding-bottom: 0px;
+}
+
+header h2 {
+    letter-spacing: 2.5px;
+    font-size: 65%;
+    text-align: center;
+    color: #006EB6;
+    border-bottom: 1px solid gray;
+    margin-bottom: 50px;
+}
+
+footer {
+    margin-top: 20px;
+}
+
+footer img {
+    display: block;
+    margin: auto;
+    width: 150px;
+    margin-top: 50px;
+}
+
+.main-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding-left: 30px;
+}
