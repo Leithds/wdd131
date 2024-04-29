@@ -49,3 +49,7 @@ footer img {
 li {
     padding-left: 30px;
 }
+
+.dark {
+    background-color: #333;
+}
