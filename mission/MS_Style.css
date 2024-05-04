@@ -63,3 +63,19 @@ body.dark .content {
     border-color: #555;
     color: white;
 }
+
+body.dark .light-logo {
+    display: none;
+}
+
+body.dark .dark-logo {
+    display: block;
+}
+
+.light-logo {
+    display: block;
+}
+
+.dark-logo {
+    display: none;
+}
