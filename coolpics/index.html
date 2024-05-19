@@ -7,34 +7,38 @@
     <meta name="Author" content="Leith Schmidtlein">
     <title>Cool Pics</title>
     <link rel="stylesheet" href="coolpics.css">
-    <script src="coolpics.js"></script>
+    <script defer src="coolpics.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Cool Pics 📷</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="#">People</a>
-            <a href="#">Places</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+<div class="viewer hide">
+    <button class="close-viewer">X</button>
+    <img src="" alt="">
+</div>
+<header>
+    <h1>Cool Pics 📷</h1>
+    <nav class="menu hide">
+        <a href="index.html">Home</a>
+        <a href="#">People</a>
+        <a href="#">Places</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+    <button class="menu-button">Menu</button>
+</header>
 
-    <main>
-        <section class="gallery">
-            <!-- <img src="images/norris-full.jpeg" alt="norris-full"> -->
-            <img src="images/norris-sm.jpeg" alt="norris-sm">
-            <img src="images/norris-sm.jpeg" alt="norris-sm">
-            <img src="images/norris-sm.jpeg" alt="norris-sm">
-            <img src="images/norris-sm.jpeg" alt="norris-sm">
-            <img src="images/norris-sm.jpeg" alt="norris-sm">
-            <img src="images/norris-sm.jpeg" alt="norris-sm">
-            <img src="images/norris-sm.jpeg" alt="norris-sm">
-            <img src="images/norris-sm.jpeg" alt="norris-sm">
-            <img src="images/norris-sm.jpeg" alt="norris-sm">
-        </section>
-    </main>
-    <footer> ©2023 Not a real site 😀</footer>
+<main>
+    <section class="gallery">
+        <img src="images/norris-sm.jpeg" alt="norris-sm">
+        <img src="images/norris-sm.jpeg" alt="norris-sm">
+        <img src="images/norris-sm.jpeg" alt="norris-sm">
+        <img src="images/norris-sm.jpeg" alt="norris-sm">
+        <img src="images/norris-sm.jpeg" alt="norris-sm">
+        <img src="images/norris-sm.jpeg" alt="norris-sm">
+        <img src="images/norris-sm.jpeg" alt="norris-sm">
+        <img src="images/norris-sm.jpeg" alt="norris-sm">
+        <img src="images/norris-sm.jpeg" alt="norris-sm">
+    </section>
+</main>
+<footer> ©2023 Not a real site 😀</footer>
 </body>
 </html>
