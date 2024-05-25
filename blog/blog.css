@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Bevan:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --primary-color: #3a4f41ff;
+    --secondary-color: #b76d68ff;
+    --accent1-color: #d0f4eaff;
+    --accent2-color: #eca400ff;
+    
+    --headline-font: 'Bevan', serif;
+    --paragraph-font: 'Josefin Slab', sans-serif;
+    
+    --headline-color-on-white: #3a4f41ff;
+    --headline-color-on-color: #3a4f41ff;
+    --paragraph-color-on-white: #3a4f41ff;
+    --paragraph-color-on-color: #b76d68ff;
+    --paragraph-background-color: #eca400ff;
+    --nav-link-color: #3a4f41ff;
+    --nav-background-color: #d0f4eaff;
+    --nav-hover-link-color: #eca400ff;
+    --nav-hover-background-color: #b76d68ff;
+}
+
+body {
+    font-family: var(--paragraph-font);
+    color: var(--paragraph-color-on-white);
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--nav-background-color);
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-family: var(--headline-font);
+    color: var(--headline-color-on-white);
+    margin: 0;
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+.main-nav {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: end;
+    gap: 1rem;
+    list-style-type: none;
+    padding: 0;
+}
+
+.main-nav li {
+    font-size: 1.2rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--nav-link-color);
+    padding: 0.5rem 1rem;
+}
+
+.main-nav a:hover {
+    color: var(--nav-hover-link-color);
+    background-color: var(--nav-hover-background-color);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.books {
+    display: grid;
+    gap: 2rem;
+}
+
+.book {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.book-details {
+    border-right: 1px solid #ddd;
+    padding-right: 1rem;
+    text-align: right;
+}
+
+.book-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.book-details li {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.book-content h2 {
+    font-family: var(--headline-font);
+    font-size: 1.5rem;
+    color: var(--headline-color-on-white);
+}
+
+.book-content img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.book-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.filters {
+    background-color: white;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.skiptocontent a {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000; 
+    color: #fff;
+    padding: 8px;
+    z-index: 1000;
+    text-decoration: none; 
+}
+
+.skiptocontent a:focus {
+    top: 0;
+}
+
+.book-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
