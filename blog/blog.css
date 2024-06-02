@@ -118,6 +118,18 @@ main {
     margin-bottom: 1rem;
 }
 
+.book-content {
+    position: relative;
+}
+
+.book-content img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
 .book-content p {
     font-size: 1rem;
     line-height: 1.5;
