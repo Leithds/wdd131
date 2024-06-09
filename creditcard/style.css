@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.credit-card-form {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    justify-items: end;
+}
+
+.card-container {
+    position: relative;
+    width: 300px;
+    height: 200px;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.card-back {
+    top: 100px;
+    left: 100px;
+    background-color: #ececec;
+    z-index: 0;
+}
+
+.card-front {
+    z-index: 1;
+}
+
+.card-element {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-element label {
+    margin-bottom: 5px;
+}
+
+.card-element input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-button {
+    align-self: center;
+    justify-self: end;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    grid-row: 8;
+    justify-self: end;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+
+.card-number {
+    grid-row: 1 / 2;
+}
+
+.card-name {
+    grid-row: 2 / 3;
+}
+
+.expiry-date {
+    grid-row: 3 / 4;
+}
+
+.cvv {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    margin-top: 120px;
+}
