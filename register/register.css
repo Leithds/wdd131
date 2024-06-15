@@ -159,3 +159,37 @@
       width: 100%;
     }
   }
+
+.participants {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.participant1, .participant2, .participant3, .participant4 {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#add {
+    grid-column: span 2;
+}
+
+#add {
+    margin-top: 20px;
+    align-self: end;
+}
+
+#summary {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #006622;
+}
