@@ -57,3 +57,43 @@ const hikes = [
 
   ];
  const simpleList = ["oranges", "grapes", "lemons", "apples", "Bananas", "watermelons", "coconuts", "broccoli", "mango"];
+
+simpleSort == simpleList.sort(
+
+)
+
+function compareFn(a,b) {
+    if (a > b) {
+      return -1;
+    } else if (a < b) {
+      return 1;
+    }
+   return 0;
+  }
+  const anotherSort = simpleList.sort(compareFn)
+
+  function searchList(list, query) {
+    function searchCallback(string) {
+      return string.toLowerCase().includes(query.toLowerCase());
+    }
+    return list.filter(searchCallback);
+  }
+  console.log(searchList(simpleList, "b"));
+  console.log(searchList(simpleList, "an"));
+
+  function searchList(list, q) {
+    function searchCallback(item) {
+      return (
+        item.name.toLowerCase().includes(q.toLowerCase()) ||
+        item.description.toLowerCase().includes(q.toLowerCase()) ||
+        item.tags.find((tag) => tag.toLowerCase().includes(q.toLowerCase()))
+      );
+    }
+    const filtered = list.filter(searchCallback);
+
+    const sorted = filtered.sort((a, b) => a.distance > b.distance);
+    return sorted;
+  }
+  console.log(searchList(hikes, "yellowstone"));
+  console.log(searchList(hikes, "moderate"));
+  console.log(searchList(hikes, "al"));

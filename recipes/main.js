@@ -3,6 +3,13 @@ import recipes from './recipes.mjs';
 document.addEventListener('DOMContentLoaded', function() {
     const searchForm = document.getElementById('searchForm');
     const recipeResultsSection = document.getElementById('recipeResults');
+    const randomRecipeDisplay = document.getElementById('randomRecipeDisplay');
+    const newRandomRecipeButton = document.getElementById('newRandomRecipe');
+
+    // rando recipe
+    displayRandomRecipe();
+
+    newRandomRecipeButton.addEventListener('click', displayRandomRecipe);
 
     searchForm.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -13,6 +20,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
         displaySearchResults(searchResults);
     });
+
+    function getRandomNumber(num) {
+        return Math.floor(Math.random() * num);
+    }
+
+    function getRandomRecipe() {
+        const randomIndex = getRandomNumber(recipes.length);
+        return recipes[randomIndex];
+    }
+
+    function displayRandomRecipe() {
+        const randomRecipe = getRandomRecipe();
+        randomRecipeDisplay.innerHTML = generateRecipeHTML(randomRecipe);
+    }
 
     function displaySearchResults(results) {
         recipeResultsSection.innerHTML = '';
@@ -26,40 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
             results.forEach(recipe => {
                 const listItem = document.createElement('li');
                 listItem.classList.add('recipe-item');
-                const image = document.createElement('img');
-                image.src = recipe.image;
-                image.alt = recipe.name + ' Image';
-                image.classList.add('recipe-image');
-                listItem.appendChild(image);
-                
-                const detailsContainer = document.createElement('div');
-                detailsContainer.classList.add('recipe-details');
-
-                const heading = document.createElement('h3');
-                heading.textContent = recipe.name;
-                detailsContainer.appendChild(heading);
-
-                const description = document.createElement('p');
-                description.textContent = recipe.description;
-                detailsContainer.appendChild(description);
-
-                const author = document.createElement('p');
-                author.textContent = `Author: ${recipe.author}`;
-                detailsContainer.appendChild(author);
-
-                const prepTime = document.createElement('p');
-                prepTime.textContent = `Prep Time: ${recipe.prepTime}`;
-                detailsContainer.appendChild(prepTime);
-
-                const cookTime = document.createElement('p');
-                cookTime.textContent = `Cook Time: ${recipe.cookTime}`;
-                detailsContainer.appendChild(cookTime);
-
-                const rating = document.createElement('p');
-                rating.textContent = `Rating: ${recipe.rating}`;
-                detailsContainer.appendChild(rating);
-
-                listItem.appendChild(detailsContainer);
+                listItem.innerHTML = generateRecipeHTML(recipe);
 
                 listItem.addEventListener('click', function() {
                     displayRecipeDetails(recipe);
@@ -72,41 +60,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    function generateRecipeHTML(recipe) {
+        return `
+            <img src="${recipe.image}" alt="${recipe.name} Image" class="recipe-image">
+            <div class="recipe-details">
+                <h3>${recipe.name}</h3>
+                <p>${recipe.description}</p>
+                <p>Author: ${recipe.author}</p>
+                <p>Prep Time: ${recipe.prepTime}</p>
+                <p>Cook Time: ${recipe.cookTime}</p>
+                <p>Rating: ${generateRatingStars(recipe.rating)}</p>
+                <p>Tags: ${generateTagsMarkup(recipe.tags)}</p>
+            </div>
+        `;
+    }
+
+    function generateRatingStars(rating) {
+        return '⭐'.repeat(Math.round(rating)) + '☆'.repeat(5 - Math.round(rating));
+    }
+
+    function generateTagsMarkup(tags) {
+        return tags.map(tag => `<span class="tag">${tag}</span>`).join(', ');
+    }
+
     function displayRecipeDetails(recipe) {
-        const recipeDetails = document.createElement('div');
-        recipeDetails.classList.add('recipe-details');
-
-        const image = document.createElement('img');
-        image.src = recipe.image;
-        image.alt = recipe.name + ' Image';
-        image.classList.add('recipe-image');
-        recipeDetails.appendChild(image);
-
-        const heading = document.createElement('h3');
-        heading.textContent = recipe.name;
-        recipeDetails.appendChild(heading);
-
-        const description = document.createElement('p');
-        description.textContent = recipe.description;
-        recipeDetails.appendChild(description);
-
-        const author = document.createElement('p');
-        author.textContent = `Author: ${recipe.author}`;
-        recipeDetails.appendChild(author);
-
-        const prepTime = document.createElement('p');
-        prepTime.textContent = `Prep Time: ${recipe.prepTime}`;
-        recipeDetails.appendChild(prepTime);
-
-        const cookTime = document.createElement('p');
-        cookTime.textContent = `Cook Time: ${recipe.cookTime}`;
-        recipeDetails.appendChild(cookTime);
-
-        const rating = document.createElement('p');
-        rating.textContent = `Rating: ${recipe.rating}`;
-        recipeDetails.appendChild(rating);
-
         recipeResultsSection.innerHTML = '';
-        recipeResultsSection.appendChild(recipeDetails);
+        recipeResultsSection.innerHTML = generateRecipeHTML(recipe);
     }
 });
