@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Page</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script type="module" src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Join Us</h1>
+        <nav>
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="join.html" class="nav-link">Join</a>
+        </nav>
+        <img src="images/logo.png" alt="Logo" class="logo">
+        <button id="loginButton" class="login-button">Login</button>
+        <button id="joinButton" class="join-button">Join</button>
+    </header>
+    <main>
+        <div class="text-image">
+            <p>Join our community and start your adventure today!</p>
+            <p>Why is it Worthwhile?
+                1. Player Agency and Exploration: In a West Marches campaign, players have unparalleled freedom to explore and shape the game world according to their interests and decisions. The focus on player agency means that every session is filled with exciting discoveries and unexpected challenges, as adventurers chart unexplored territories, uncover ancient ruins, and encounter diverse cultures and creatures.
+                2. Community Collaboration: One of the greatest strengths of the West Marches format is its ability to foster a strong sense of community among players. Collaborative storytelling and shared experiences create a vibrant gaming environment where players can form alliances, rivalries, and lasting friendships both in and out of character. With a diverse cast of characters and players, each session becomes an opportunity for rich role-playing interactions and memorable moments.
+                3. Flexibility and Accessibility: Unlike traditional TTRPG campaigns that require a consistent group of players and a fixed schedule, West Marches games offer unparalleled flexibility. With a larger player pool and asynchronous scheduling, participants can easily find sessions that fit their availability, making it ideal for busy schedules and players from different time zones. This accessibility opens up the hobby to a wider audience, welcoming newcomers and seasoned veterans alike to embark on epic adventures together.</p>
+            <img src="images/dice.jpg" alt="Dice" class="content-image">
+        </div>
+        <div>
+            <p>What You Need to
+                What Would Interested GMs/DMs Be Doing?
+                As a Game Master (GM) or Dungeon Master (DM) in a West Marches-style TTRPG, your role is to serve as the arbiter of the game world, creating immersive environments, crafting compelling narratives, and facilitating player-driven exploration and adventure. You'll be responsible for designing the wilderness setting, populating it with diverse locations, challenges, and inhabitants, and responding dynamically to the actions and choices of the players. With each session, you'll collaborate with players to weave their individual stories into the fabric of the larger game world, ensuring that every adventure is unique and memorable. Furthermore, there will be meetings to ensure continuity issues don’t arise and all players feel they are playing in the same living world.</p>
+        </div>
+        <div class="text-image">
+            <img src="images/minis.jpg" alt="Minis" class="content-image">
+            <p>What Do Interested Players Need to Do?
+                If you're interested in joining a West Marches-style TTRPG, the first step is to familiarize yourself with the rules and guidelines established by the hosting website or community. Once you've familiarized yourself with the basics, you can create a character that reflects your desired role within the game world, whether it's a cunning rogue, a wise wizard, or a stalwart warrior. From there, you'll have the opportunity to join sessions organized by the GM/DM or even propose your own expeditions and quests for fellow players to join. With a spirit of adventure and a willingness to collaborate with others, you'll embark on an epic journey filled with discovery, danger, and camaraderie in the world of the West Marches.</p>
+        </div>
+        <div id="calendar" class="calendar"></div>
+    </main>
+    <footer>
+        <img src="images/logo.png" alt="Logo" class="footer-logo">
+        <a href="https://discord.com" class="discord-link">
+            <img src="images/discord.png" alt="Discord" class="discord-img">
+        </a>
+    </footer>
+
+    <div id="joinPopup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Join Form</h2>
+            <form id="join-form">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="discordTag">Discord Tag</label>
+                <input type="text" id="discordTag" name="discordTag" required>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Join</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="loginPopup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Login Form</h2>
+            <form id="login-form">
+                <label for="login-username">Username</label>
+                <input type="text" id="login-username" name="login-username" required>
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" name="login-password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
